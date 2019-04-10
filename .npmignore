@@ -5,3 +5,4 @@ makefile
 index.js
 webpack.*
 examples
+testing/*
