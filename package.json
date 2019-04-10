@@ -1,6 +1,6 @@
 {
   "name": "rcwe",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React contexts with events.",
   "main": "./lib/index.js",
   "module": "./lib/index.js",
