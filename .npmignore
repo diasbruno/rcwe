@@ -2,7 +2,8 @@
 *.orig
 *.rej
 makefile
-index.js
+./index.js
 webpack.*
 examples
-testing/*
+testing
+dist
