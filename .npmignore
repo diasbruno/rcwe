@@ -2,5 +2,9 @@
 *.orig
 *.rej
 makefile
+./index.js
 webpack.*
 examples
+testing
+dist
+*.html

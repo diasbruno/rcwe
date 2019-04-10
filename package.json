@@ -1,11 +1,12 @@
 {
   "name": "rcwe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React contexts with events.",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
   "author": "Bruno Dias",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "daggy": "^1.4.0"
   },
   "devDependencies": {
