@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../index */ \"./index.js\");\n/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types */ \"./examples/types.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(_index__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_types__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n  Increment: function Increment(event) {\n    return function (state) {\n      return {\n        count: state.count + event\n      };\n    };\n  },\n  Decrement: function Decrement(event) {\n    return function (state) {\n      return {\n        count: state.count - event\n      };\n    };\n  }\n}));\n\n//# sourceURL=webpack:///./examples/state.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/index */ \"./src/index.js\");\n/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types */ \"./examples/types.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(_src_index__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_types__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n  Increment: function Increment(event) {\n    return function (state) {\n      return {\n        count: state.count + event\n      };\n    };\n  },\n  Decrement: function Decrement(event) {\n    return function (state) {\n      return {\n        count: state.count - event\n      };\n    };\n  }\n}));\n\n//# sourceURL=webpack:///./examples/state.js?");
 
 /***/ }),
 
@@ -119,18 +119,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ind
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var daggy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! daggy */ \"./node_modules/daggy/src/daggy.js\");\n/* harmony import */ var daggy__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(daggy__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(daggy__WEBPACK_IMPORTED_MODULE_0__[\"taggedSum\"])('Events', {\n  Increment: ['n'],\n  Decrement: ['n']\n}));\n\n//# sourceURL=webpack:///./examples/types.js?");
-
-/***/ }),
-
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (adt, transformations) {\n  var Context = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();\n  return _objectSpread({}, adt, {\n    Consumer: Context.Consumer,\n    Provider: function Provider(props) {\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Context.Provider, {\n        value: _objectSpread({}, props.scope.state, {\n          applyCB: function applyCB(event) {\n            return function () {\n              return props.scope.setState(event.cata(transformations)(props.scope.state));\n            };\n          },\n          apply: function apply(event) {\n            return props.scope.setState(event.cata(transformations)(props.scope.state));\n          }\n        })\n      }, props.children);\n    },\n    Context: Context\n  });\n});\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -318,6 +306,18 @@ eval("/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals 
 /***/ (function(module, exports) {
 
 eval("var g; // This works in non-strict mode\n\ng = function () {\n  return this;\n}();\n\ntry {\n  // This works if eval is allowed (see CSP)\n  g = g || new Function(\"return this\")();\n} catch (e) {\n  // This works if the window reference is available\n  if (typeof window === \"object\") g = window;\n} // g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\n\nmodule.exports = g;\n\n//# sourceURL=webpack:///(webpack)/buildin/global.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (adt, transformations) {\n  var Context = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext();\n  return _objectSpread({}, adt, {\n    Consumer: Context.Consumer,\n    Provider: function Provider(props) {\n      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Context.Provider, {\n        value: _objectSpread({}, props.scope.state, {\n          applyCB: function applyCB(event) {\n            return function () {\n              return props.scope.setState(event.cata(transformations)(props.scope.state));\n            };\n          },\n          apply: function apply(event) {\n            return props.scope.setState(event.cata(transformations)(props.scope.state));\n          }\n        })\n      }, props.children);\n    },\n    Context: Context\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

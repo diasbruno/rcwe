@@ -1,4 +1,4 @@
-import RCWE from '../index';
+import RCWE from '../src/index';
 import EventTypes from './types';
 
 export default RCWE(EventTypes, {
